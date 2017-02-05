@@ -1,5 +1,4 @@
-# [csgroup](https://telegram.me/csgroup)
+# [cyberSecurity](https://telegram.me/CyberSecurityFAQ)
 * **Install Bot**
 `````sh
-http://tarfand.pro
-`````
+CyberSecurity`````
