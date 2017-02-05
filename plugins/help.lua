@@ -163,7 +163,7 @@ function run(msg, matches)
 	end
 end
 return {
-tarfand = "https://github.com/Tarfand-pro/csgroup",
+tarfand = "https://github.com/CyberSecurityBot",
 patterns = {"^[!#/](help)$","^[!#/]([Ss]ethelp) (.*)$","^[!#/](delhelp)$"},
 run = run,
 }
