@@ -58,8 +58,8 @@ end
 	--Prerequisite.
 --Begin pre_process function
 local function pre_process(msg)
--- Begin 'RondoMsgChecks' text checks by @rondoozle and Edited by @P9999
--- Powered by @csgroup & CopyRight all right reserved
+-- Begin 'RondoMsgChecks' 
+-- Powered by @CyberSecurityFAQ & CopyRight all right reserved
 if is_chat_msg(msg) or is_super_group(msg) then
 	local data = load_data(_config.moderation.data)
 	local print_name = user_print_name(msg.from):gsub("‮", "") -- get rid of rtl in names
@@ -468,13 +468,13 @@ if is_chat_msg(msg) or is_super_group(msg) then
         end
 			--Cmd Lock.
 end
--- End 'RondoMsgChecks' text checks by @Rondoozle
+-- End 'RondoMsgChecks' @CyberSecurityFAQ
    end
 	return msg
 end
---End pre_process function
+--End pre_process function    @CyberSecurityFAQ
 return {
 	patterns = {},
 	pre_process = pre_process,
 }
---End security.lua By @Rondoozle
+--End security.lua    @CyberSecurityFAQ
