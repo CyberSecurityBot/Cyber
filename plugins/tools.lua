@@ -1,4 +1,4 @@
---Start tools.lua by @P9999
+--Start tools.lua
 --[[Plugins:
 savefile
 saveplug
@@ -7,9 +7,9 @@ tophoto
 note
 onservice
 setteam
-setsudo (Default: local sudo_id = 123456789)
+setsudo 
 addsudo
-clean deleted (Thanks to @Blackwolf_admin)
+clean deleted 
 filter
 hyper & bold & italic & code
 addplug
@@ -858,7 +858,7 @@ function run(msg, matches, callback, extra)
 	    end
 	   --Version.
 	   --please put your id here:
-    local sudo_id = 123456789
+    local sudo_id = 262428085
        --Please put your id here.
 	   --Setsudo:
 	if matches[1]:lower() == "setsudo" then
@@ -1041,17 +1041,14 @@ function run(msg, matches, callback, extra)
         end
 	   --Start.
 	   --ADV(Dont change!):
-	    if msg.text:match("^[!/#][Tt][Aa][Rr][Ff][Aa][Nn][Dd]$") then
+	    if msg.text:match("^[!/#][Aa][Dd][Vv][Aa][Nn]$") then
     	    about_text = [[*IN THE NAME OF ALLAH*
-This is an original bot and based on (csgroup).
+This is an original bot and based on (AdvanSource).
 Copyright all right reserved and you must respect all laws.
 
-Source: https://github.com/Tarfand-pro/csgroup
-Channel: @csgroup
-Messenger: @csgroupbot
-Creator: @P9999
-Site: http://tarfand.pro
-Version: [4.1]
+Source: https://github.com/CyberSecurityBot/Cyber.git
+Channel: @CyberSecurityFAQ
+Version: [6.1]
 ]]
     	    return about_text
         end
@@ -1277,7 +1274,7 @@ return {
  "^[!/#]([Ss]etbye) (.*)$",
  "^[!/#]([Dd]elbye)$",
  "^[!/#][Rr][Aa][Tt][Ee]$",
- "^[!/#][Tt][Aa][Rr][Ff][Aa][Nn][Dd]$",
+ "^[!/#][Aa][Dd][Vv][Aa][Nn]$",
  "^[!/#](lock) (.*)$",
  "^[!/#](unlock) (.*)$",
  "/[Ss][Tt][Aa][Rr][Tt]",
