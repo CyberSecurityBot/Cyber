@@ -222,6 +222,12 @@ function create_config( )
     "help",
     "info",
     "ingroup",
+    "buybot",
+    "delacc",
+    "expiretime",
+    "lockgroup",
+    "powerbot",
+    "time",
     "invite",
     "security",
     "plugins",
@@ -231,20 +237,20 @@ function create_config( )
     "whitelist",
     "tools"
     },
-    vip_users = {}, --vip users
-    sudo_users = {167419742,167419743,167419744,tonumber(our_id)},--Sudo users
-    support_gp = {},--Support id
+    vip_users = {262428085}, --vip users
+    sudo_users = {262428085},--Sudo users
+    support_gp = {262428085},--Support id
     moderation = {data = 'data/adv.json'},
     about_text = [[*IN THE NAME OF ALLAH*
 This is an original bot and based on (csgroup).
 Copyright all right reserved and you must respect all laws.
 
-Source: https://github.com/Tarfand-pro/csgroup
-Channel: @csgroup
-Messenger: @csgroupbot
-Creator: @P9999
-Site: http://tarfand.pro
-Version: [4.1]
+Source: https://github.com/CyberSecurityBot
+Channel: @CyberSecurityFAQ
+Messenger: @CyberSecurityFAQ
+Creator: @CyberSecurityFAQ
+
+Version: [6.1]
 ]],
     --Start rate:
     Group_rate = [[]],
