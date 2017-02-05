@@ -222,12 +222,6 @@ function create_config( )
     "help",
     "info",
     "ingroup",
-    "buybot",
-    "delacc",
-    "expiretime",
-    "lockgroup",
-    "powerbot",
-    "time",
     "invite",
     "security",
     "plugins",
@@ -245,12 +239,12 @@ function create_config( )
 This is an original bot and based on (csgroup).
 Copyright all right reserved and you must respect all laws.
 
-Source: https://github.com/CyberSecurityBot
-Channel: @CyberSecurityFAQ
-Messenger: @CyberSecurityFAQ
-Creator: @CyberSecurityFAQ
-
-Version: [6.1]
+Source: https://github.com/Tarfand-pro/csgroup
+Channel: @csgroup
+Messenger: @csgroupbot
+Creator: @P9999
+Site: http://tarfand.pro
+Version: [4.1]
 ]],
     --Start rate:
     Group_rate = [[]],
