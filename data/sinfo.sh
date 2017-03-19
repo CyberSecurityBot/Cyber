@@ -32,7 +32,7 @@ echo 'Processes : '"$ProcessCnt"' \r\n'
 echo 'Storage : '"$hdd"'% \r\n'
 echo 'UPTime : '"$uptime"' \r\n'
 echo "🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹 \r\n"
-echo "🔗 https://telegram.me/ARKInfoLite \r\n"
+echo "🔗 https://telegram.me/CyberSecurityhelp \r\n"
 
 -- @AmirVTA
 -- @ARKInfo
