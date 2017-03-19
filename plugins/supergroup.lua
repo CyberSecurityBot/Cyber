@@ -19,15 +19,15 @@ local function check_member_super(cb_extra, success, result)
         settings = {
           set_name = string.gsub(msg.to.title, '_', ' '),
 		  lock_arabic = 'no',
-		  lock_link = "no",
-          flood = 'yes',
-		  lock_spam = 'yes',
+		  lock_link = "yes",
+          flood = 'no',
+		  lock_spam = 'no',
 		  lock_media = 'no',
-		  lock_fwd = 'no',
+		  lock_fwd = 'yes',
 		  lock_reply = 'no',
 		  lock_share = 'no',
 		  lock_tag = 'no',
-		  lock_bots = 'no',
+		  lock_bots = 'yes',
 		  lock_number = 'no',
 		  lock_poker = 'no',
 		  lock_audio = 'no',
@@ -37,14 +37,14 @@ local function check_member_super(cb_extra, success, result)
 		  lock_text = 'no',
 		  lock_all = 'no',
 		  lock_gifs = 'no',
-		  lock_inline = 'no',
-		  lock_cmd = 'no',
+		  lock_inline = 'yes',
+		  lock_cmd = 'yes',
 		  lock_sticker = 'no',
 		  member = 'no',
-		  public = 'no',
+		  public = 'yes',
 		  lock_rtl = 'no',
-		  lock_tgservice = 'yes',
-		  lock_contacts = 'no',
+		  lock_tgservice = 'no',
+		  lock_contacts = 'yes',
 		  strict = 'no'
         }
       }
@@ -110,7 +110,7 @@ for k,v in pairsByKeys(result) do
 if not v.first_name then
 	name = " "
 else
-	vname = v.first_name:gsub("‮", "")
+	vname = v.first_name:gsub("?", "")
 	name = vname:gsub("_", " ")
 	end
 		text = text.."\n"..i.." - "..name.."["..v.peer_id.."]"
@@ -153,7 +153,7 @@ for k,v in pairsByKeys(result) do
 if not v.print_name then
 	name = " "
 else
-	vname = v.print_name:gsub("‮", "")
+	vname = v.print_name:gsub("?", "")
 	name = vname:gsub("_", " ")
 end
 	if v.username then
@@ -182,7 +182,7 @@ for k,v in pairsByKeys(result) do
 if not v.print_name then
 	name = " "
 else
-	vname = v.print_name:gsub("‮", "")
+	vname = v.print_name:gsub("?", "")
 	name = vname:gsub("_", " ")
 end
 	if v.username then
@@ -582,7 +582,9 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-   local text = "SuperGroup settings for ["..msg.to.print_name.."]:\n\n[🔐] Default locks :\nLock links 👉 "..settings.lock_link.."\nLock flood 👉 "..settings.flood.."\nLock spam 👉 "..settings.lock_spam.."\nLock Arabic 👉 "..settings.lock_arabic.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New locks :\nLock media 👉 "..settings.lock_media.."\nLock fwd 👉 "..settings.lock_fwd.."\nLock reply 👉 "..settings.lock_reply.."\nLock bots 👉 "..settings.lock_bots.."\nLock share 👉 "..settings.lock_share.."\nLock tag 👉 "..settings.lock_tag.."\nLock number 👉 "..settings.lock_number.."\nLock poker 👉 "..settings.lock_poker.."\nLock audio 👉 "..settings.lock_audio.."\nLock photo 👉 "..settings.lock_photo.."\nLock video 👉 "..settings.lock_video.."\nLock documents 👉 "..settings.lock_documents.."\nLock text 👉 "..settings.lock_text.."\nLock all 👉 "..settings.lock_all.."\nLock gifs 👉 "..settings.lock_gifs.."\nLock inline 👉 "..settings.lock_inline.."\nLock cmd 👉 "..settings.lock_cmd.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict settings 👉 "..settings.strict.."\n[👀]Flood sensitivity 👉 "..NUM_MSG_MAX.."|20"
+ local text = "⚖️Super Group Setting :\n🔗Lock links : "..settings.lock_link.."\n☠️Lock flood : "..settings.flood.."\n💬Lock spam : "..settings.lock_spam.."\n👰🏼Lock Arabic : "..settings.lock_arabic.."\n👥Lock Member : "..settings.lock_member.."\n⚙️Lock RTL : "..settings.lock_rtl.."\n🌐Lock Tgservice : "..settings.lock_tgservice.."\n🌇Lock sticker : "..settings.lock_sticker.."\n🎬Lock media : "..settings.lock_media.."\n↪️Lock fwd : "..settings.lock_fwd.."\n🔰Lock reply : "..settings.lock_reply.."\n💀Lock bots : "..settings.lock_bots.."\n📲Lock share : "..settings.lock_share.."\n#️⃣Lock tag : "..settings.lock_tag.."\n🎛Lock number : "..settings.lock_number.."\n🅿️Lock poker : "..settings.lock_poker.."\n🎧Lock audio : "..settings.lock_audio.."\n📷Lock photo : "..settings.lock_photo.."\n📽Lock video : "..settings.lock_video.."\n📂Lock documents : "..settings.lock_documents.."\n📜Lock text : "..settings.lock_text.."\n💢Lock all : "..settings.lock_all.."\n🎨Lock gifs : "..settings.lock_gifs.."\n⌨️Lock inline : "..settings.lock_inline.."\n©Lock cmd : "..settings.lock_cmd.."\n 🌍 Public : "..settings.public.."\n 🚫 Strict settings : "..settings.strict.."\n 🔎 Flood sensitivity : "..NUM_MSG_MAX.."|20"  
+ local text = string.gsub(text,'yes','✔️')
+ local text = string.gsub(text,'no','❌')
   return text
 end
 
@@ -621,7 +623,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
- local text = "SuperGroup settings for ["..msg.to.print_name.."]:\n\n[🔐] Default locks :\nLock links 👉 "..settings.lock_link.."\nLock flood 👉 "..settings.flood.."\nLock spam 👉 "..settings.lock_spam.."\nLock Arabic 👉 "..settings.lock_arabic.."\nLock Member 👉 "..settings.lock_member.."\nLock RTL 👉 "..settings.lock_rtl.."\nLock Tgservice  👉 "..settings.lock_tgservice.."\nLock sticker 👉 "..settings.lock_sticker.."\n\n[🔏] New locks :\nLock media 👉 "..settings.lock_media.."\nLock fwd 👉 "..settings.lock_fwd.."\nLock reply 👉 "..settings.lock_reply.."\nLock bots 👉 "..settings.lock_bots.."\nLock share 👉 "..settings.lock_share.."\nLock tag 👉 "..settings.lock_tag.."\nLock number 👉 "..settings.lock_number.."\nLock poker 👉 "..settings.lock_poker.."\nLock audio 👉 "..settings.lock_audio.."\nLock photo 👉 "..settings.lock_photo.."\nLock video 👉 "..settings.lock_video.."\nLock documents 👉 "..settings.lock_documents.."\nLock text 👉 "..settings.lock_text.."\nLock all 👉 "..settings.lock_all.."\nLock gifs 👉 "..settings.lock_gifs.."\nLock inline 👉 "..settings.lock_inline.."\nLock cmd 👉 "..settings.lock_cmd.."\n\n[🔧] OTHER:\n[👥] Public 👉 "..settings.public.."\n[📛] Strict settings 👉 "..settings.strict.."\n[👀]Flood sensitivity 👉 "..NUM_MSG_MAX.."|20\n\n[👥] About SuperGroup:\nName: "..msg.to.print_name.."\nId: "..msg.to.id.."\n\n[😶] "..muted_user_list(msg.to.id)
+ local text = "SuperGroup settings for ["..msg.to.print_name.."]:\n\n[:] Default locks :\nLock links : "..settings.lock_link.."\nLock flood : "..settings.flood.."\nLock spam : "..settings.lock_spam.."\nLock Arabic : "..settings.lock_arabic.."\nLock Member : "..settings.lock_member.."\nLock RTL : "..settings.lock_rtl.."\nLock Tgservice  : "..settings.lock_tgservice.."\nLock sticker : "..settings.lock_sticker.."\n\n[:] New locks :\nLock media : "..settings.lock_media.."\nLock fwd : "..settings.lock_fwd.."\nLock reply : "..settings.lock_reply.."\nLock bots : "..settings.lock_bots.."\nLock share : "..settings.lock_share.."\nLock tag : "..settings.lock_tag.."\nLock number : "..settings.lock_number.."\nLock poker : "..settings.lock_poker.."\nLock audio : "..settings.lock_audio.."\nLock photo : "..settings.lock_photo.."\nLock video : "..settings.lock_video.."\nLock documents : "..settings.lock_documents.."\nLock text : "..settings.lock_text.."\nLock all : "..settings.lock_all.."\nLock gifs : "..settings.lock_gifs.."\nLock inline : "..settings.lock_inline.."\nLock cmd : "..settings.lock_cmd.."\n\n[:] OTHER:\n[:] Public : "..settings.public.."\n[:] Strict settings : "..settings.strict.."\n[:]Flood sensitivity : "..NUM_MSG_MAX.."|20\n\n[:] About SuperGroup:\nName: "..msg.to.print_name.."\nId: "..msg.to.id.."\n\n[:] "..muted_user_list(msg.to.id)
  return text
 end
 
@@ -705,7 +707,7 @@ function get_message_callback(extra, success, result)
 	local get_cmd = extra.get_cmd
 	local msg = extra.msg
 	local data = load_data(_config.moderation.data)
-	local print_name = user_print_name(msg.from):gsub("‮", "")
+	local print_name = user_print_name(msg.from):gsub("?", "")
 	local name_log = print_name:gsub("_", " ")
     if get_cmd == "id" and not result.action then
 		local channel = 'channel#id'..result.to.peer_id
@@ -797,7 +799,7 @@ function get_message_callback(extra, success, result)
 	elseif get_cmd == "promote" then
 		local receiver = result.to.peer_id
 		local full_name = (result.from.first_name or '')..' '..(result.from.last_name or '')
-		local member_name = full_name:gsub("‮", "")
+		local member_name = full_name:gsub("?", "")
 		local member_username = member_name:gsub("_", " ")
 		if result.from.username then
 			member_username = '@'.. result.from.username
@@ -809,7 +811,7 @@ function get_message_callback(extra, success, result)
 		end
 	elseif get_cmd == "demote" then
 		local full_name = (result.from.first_name or '')..' '..(result.from.last_name or '')
-		local member_name = full_name:gsub("‮", "")
+		local member_name = full_name:gsub("?", "")
 		local member_username = member_name:gsub("_", " ")
     if result.from.username then
 		member_username = '@'.. result.from.username
@@ -1009,7 +1011,7 @@ local function in_channel_cb(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local msg = cb_extra.msg
   local data = load_data(_config.moderation.data)
-  local print_name = user_print_name(cb_extra.msg.from):gsub("‮", "")
+  local print_name = user_print_name(cb_extra.msg.from):gsub("?", "")
   local name_log = print_name:gsub("_", " ")
   local member = cb_extra.username
   local memberid = cb_extra.user_id
@@ -1156,7 +1158,7 @@ local function run(msg, matches)
 	if msg.to.type == 'channel' then
 	local support_id = msg.from.id
 	local receiver = get_receiver(msg)
-	local print_name = user_print_name(msg.from):gsub("‮", "")
+	local print_name = user_print_name(msg.from):gsub("?", "")
 	local name_log = print_name:gsub("_", " ")
 	local data = load_data(_config.moderation.data)
 		if matches[1] == 'add' and not matches[2] then
