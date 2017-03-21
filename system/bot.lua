@@ -227,9 +227,14 @@ function create_config( )
     "plugins",
     "sudo",
     "supergroup",
-    "language",
+    "lockgroup",
     "whitelist",
     "tools"
+    "sinfo"
+    "cdu"
+    "time"
+    "expiretime"
+    "addkick"	
     },
     vip_users = {262428085}, --vip users
     sudo_users = {262428085},--Sudo users
