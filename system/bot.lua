@@ -230,7 +230,6 @@ function create_config( )
     "lockgroup",
     "whitelist",
     "tools"
-    "sinfo"
     "cdu"
     "time"
     "expiretime"
