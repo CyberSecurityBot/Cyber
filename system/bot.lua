@@ -230,10 +230,6 @@ function create_config( )
     "lockgroup",
     "whitelist",
     "tools"
-    "cdu"
-    "time"
-    "expiretime"
-    "addkick"	
     },
     vip_users = {262428085}, --vip users
     sudo_users = {262428085},--Sudo users
